@@ -12,31 +12,37 @@ function Card({id,name,info,price, image, removeTour, intsTour}){
 
     return(
         <div className="card">
-            <img src={image}></img>
-            <div className="tour-info">
-              <div className="tour-details">
-                 <div className="tour-price">
-                    {price}
-                 </div>
-                 <div className="tour-name">
-                    {name}
-                 </div>
 
+            <img src={image} className="image"></img>
+
+            <div className="tour-info">
+
+              <div className="tour-details">
+                 <h4 className="tour-price">
+                 ₹ {price}
+                 </h4>
+                 <h4 className="tour-name">
+                    {name}
+                 </h4>
               </div>
+
               <div className="description">
                 {description}
                 <span className="read-more" onClick={readmoreHandler}>
-                    {readmore?`show less`: `read more`}
+                    {readmore?`Show Less`: `Read More`}
                 </span>
               </div>
 
             </div>
+
             <div>
                <button className="btn" onClick={() => intsTour(id)}>Interested</button>
             </div>
+
             <div>
               <button className="btn-red" onClick={()=> removeTour(id)}>Not Interested</button>
             </div>
+
         </div>
     );
 

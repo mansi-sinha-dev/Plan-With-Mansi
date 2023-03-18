@@ -19,14 +19,14 @@ const App = () => {
   if(tours.length === 0){
     return(
       <div className="refresh">
-        <h2>No tour plan</h2>
-        <button onClick={()=> setTours(data)}>Refresh</button>
+        <h2>No tour plan left</h2>
+        <button className="btn-white" onClick={()=> setTours(data)}>Refresh</button>
       </div>
     );
   }
 
   return(
-    <div>
+    <div className="App">
       <Tours tours={tours} removeTour={removeHandler} interestTour={interestedHandler}></Tours>
     </div>
   );
